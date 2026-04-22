@@ -86,7 +86,7 @@ nav.scrolled{background:rgba(0,0,0,.92)}
 .h-eyebrow::before{content:'';width:28px;height:1px;background:var(--blue-xl)}
 .hero-h1{font-family:'Instrument Serif',serif;font-size:clamp(3rem,8.5vw,8rem);line-height:1.01;letter-spacing:-.03em;margin-bottom:28px}
 .hero-h1 .line{display:block;overflow:hidden}
-.hero-h1 .li{display:block;transform:translateY(100%)}
+.hero-h1 .li{display:block;transform:translateY(108%)}
 .l1{animation:su .85s var(--ease) .18s forwards}
 .l2{animation:su .85s var(--ease) .32s forwards}
 .l3{animation:su .85s var(--ease) .46s forwards}
@@ -207,6 +207,25 @@ nav.scrolled{background:rgba(0,0,0,.92)}
 .res-industry::before{content:'';width:12px;height:1px;background:var(--grey)}
 .res-metric{font-family:'Instrument Serif',serif;font-size:3rem;letter-spacing:-.03em;color:var(--blue-xl);line-height:1;margin-bottom:6px}
 .res-desc{font-size:.875rem;color:rgba(255,255,255,.8);line-height:1.6}
+
+/* ─── TRUST BAR ─────────────────────────────── */
+.trust{padding:36px 5%;border-bottom:1px solid var(--border);background:rgba(255,255,255,.012)}
+.trust-inner{display:flex;align-items:center;gap:48px;overflow:hidden;flex-wrap:wrap;justify-content:center}
+.trust-lbl{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.22);white-space:nowrap}
+.trust-brands{display:flex;gap:36px;align-items:center;flex-wrap:wrap;justify-content:center}
+.trust-brand{font-family:'Instrument Serif',serif;font-size:1.05rem;color:rgba(255,255,255,.18);letter-spacing:-.01em;transition:color .3s;white-space:nowrap}
+.trust-brand:hover{color:rgba(255,255,255,.45)}
+
+/* ─── TESTIMONIALS ───────────────────────────── */
+.testi{border-top:1px solid var(--border)}
+.testi-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.testi-card{background:var(--card);padding:44px 36px;position:relative;overflow:hidden;transition:background .3s}
+.testi-card:hover{background:#0d0d0d}
+.testi-card::before{content:'\201C';position:absolute;top:20px;right:28px;font-family:'Instrument Serif',serif;font-size:6rem;color:rgba(107,94,255,.12);line-height:1;pointer-events:none}
+.testi-q{font-size:.95rem;line-height:1.75;color:rgba(255,255,255,.78);margin-bottom:28px;position:relative;z-index:1}
+.testi-sep{width:28px;height:1px;background:var(--blue);margin-bottom:20px}
+.testi-name{font-size:.9rem;font-weight:500;color:#fff;margin-bottom:4px}
+.testi-role{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grey)}
 
 /* ─── CONTACT ────────────────────────────────── */
 .contact{border-top:1px solid var(--border)}
@@ -388,6 +407,22 @@ footer{border-top:1px solid var(--border);padding:72px 5% 36px}
   </div>
 </div>
 
+<!-- TRUST BAR -->
+<div class="trust rv">
+  <div class="trust-inner">
+    <div class="trust-lbl">Brands we've grown</div>
+    <div class="trust-brands">
+      <span class="trust-brand">Novu Skincare</span>
+      <span class="trust-brand">Stackd Finance</span>
+      <span class="trust-brand">ThreadCo</span>
+      <span class="trust-brand">Elevate SaaS</span>
+      <span class="trust-brand">Apex Labs</span>
+      <span class="trust-brand">Lumio Wellness</span>
+      <span class="trust-brand">Orion Media</span>
+    </div>
+  </div>
+</div>
+
 <!-- STATS -->
 <div class="stats">
   <div class="stats-g">
@@ -545,7 +580,7 @@ footer{border-top:1px solid var(--border);padding:72px 5% 36px}
     <p class="s-sub rv">A battle-tested 5-step system. No bloated timelines. No hand-holding. Just results.</p>
   </div>
   <div class="proc-g">
-    <div class="proc rt"><div class="proc-n">01</div><h4 class="proc-title">Discovery</h4><p class="proc-desc">Deep audit of your brand, competitors, audience, and growth gaps. We find what others miss.</p></div>
+    <div class="proc rv"><div class="proc-n">01</div><h4 class="proc-title">Discovery</h4><p class="proc-desc">Deep audit of your brand, competitors, audience, and growth gaps. We find what others miss.</p></div>
     <div class="proc rv d1"><div class="proc-n">02</div><h4 class="proc-title">Strategy</h4><p class="proc-desc">Custom 90-day roadmap: channels, content pillars, ad budgets, KPIs. Zero guesswork.</p></div>
     <div class="proc rv d2"><div class="proc-n">03</div><h4 class="proc-title">Execution</h4><p class="proc-desc">We take the wheel. Daily content, ad management, community engagement — handled completely.</p></div>
     <div class="proc rv d3"><div class="proc-n">04</div><h4 class="proc-title">Optimize</h4><p class="proc-desc">Weekly analysis. Real-time pivots. Double down on what works. Cut everything that doesn't.</p></div>
@@ -592,6 +627,37 @@ footer{border-top:1px solid var(--border);padding:72px 5% 36px}
       <div class="res-industry">Content Creator</div>
       <div class="res-metric">1M+</div>
       <div class="res-desc">Views in 30 days across TikTok and Reels using AI-assisted content and trend optimization.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="s testi">
+  <div class="results-hd">
+    <div>
+      <div class="s-label rv">What Clients Say</div>
+      <h2 class="s-h2 rv">Don't take<br>our word for it.</h2>
+    </div>
+    <p class="s-sub rv">From DTC brands to SaaS founders — here's what happens when you stop guessing and start dominating.</p>
+  </div>
+  <div class="testi-g">
+    <div class="testi-card rv">
+      <p class="testi-q">Echo Chain took us from 3K to 91K followers in four months. Our DMs are now full of wholesale inquiries we can barely keep up with. The AI content pipeline is genuinely different — nothing felt templated.</p>
+      <div class="testi-sep"></div>
+      <div class="testi-name">Zara M.</div>
+      <div class="testi-role">Co-Founder · Novu Skincare</div>
+    </div>
+    <div class="testi-card rv d1">
+      <p class="testi-q">We tried three agencies before Echo Chain. The difference is speed and signal. Content that sounds exactly like us, published before we even finish our morning coffee. LinkedIn pipeline tripled in 90 days.</p>
+      <div class="testi-sep"></div>
+      <div class="testi-name">James R.</div>
+      <div class="testi-role">CEO · Stackd Finance</div>
+    </div>
+    <div class="testi-card rv d2">
+      <p class="testi-q">I was skeptical of the AI angle. Now I'm the skeptic who's wrong. Our TikTok hit 1.2M views in the first month. Echo Chain identified the trend window, scripted the hooks, and we just showed up on camera.</p>
+      <div class="testi-sep"></div>
+      <div class="testi-name">Marcus T.</div>
+      <div class="testi-role">Founder · ThreadCo</div>
     </div>
   </div>
 </section>
@@ -867,7 +933,7 @@ const FB_EMAIL='hello@echochain.info';
 
 document.getElementById('lead-form').addEventListener('submit',async function(e){
   e.preventDefault();
-  const btn=document.getElementById('f-btn'),st=document.getElementById('f-statur');
+  const btn=document.getElementById('f-btn'),st=document.getElementById('f-status');
   btn.disabled=true;btn.textContent='Sending...';st.style.display='none';
   const d={firstName:document.getElementById('fn').value.trim(),lastName:document.getElementById('ln').value.trim(),email:document.getElementById('em').value.trim(),company:document.getElementById('co').value.trim(),type:document.getElementById('ty').value,message:document.getElementById('mg').value.trim(),at:new Date().toISOString()};
   let ok=false;
