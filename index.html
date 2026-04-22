@@ -12,7 +12,7 @@
 /* ─── RESET ──────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
-body{background:#000;color:#fff;font-family:'DM Sans',sans-serif;overflow-x:hidden;cursor:none;line-height:1.6}
+body{background:#000;color:#fff;font-family:'DM Sans',sans-serif;overflow-x:hidden;cursor:auto;line-height:1.6}
 
 /* ─── VARS ───────────────────────────────────── */
 :root{
@@ -31,12 +31,6 @@ body::after{
   opacity:.55;
 }
 
-/* ─── CURSOR ─────────────────────────────────── */
-#cur-dot{position:fixed;width:5px;height:5px;background:#fff;border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:background .15s,transform .1s}
-#cur-ring{position:fixed;width:34px;height:34px;border:1.5px solid rgba(255,255,255,.4);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:width .3s var(--ease),height .3s var(--ease),border-color .25s}
-body.c-hover #cur-ring{width:56px;height:56px;border-color:var(--blue-l)}
-body.c-hover #cur-dot{background:var(--blue-l);transform:translate(-50%,-50%) scale(1.6)}
-body.c-click #cur-ring{transform:translate(-50%,-50%) scale(.82)}
 
 /* ─── NAV ────────────────────────────────────── */
 nav{
@@ -55,9 +49,9 @@ nav.scrolled{background:rgba(0,0,0,.92)}
 .nav-r{display:flex;align-items:center;gap:6px}
 .nav-link{color:var(--grey-l);font-size:.85rem;text-decoration:none;padding:8px 14px;border-radius:100px;transition:color .2s,background .2s}
 .nav-link:hover{color:#fff;background:rgba(255,255,255,.05)}
-.nav-btn{background:var(--blue);color:#fff;border:none;padding:10px 20px;border-radius:100px;font-size:.85rem;font-weight:500;cursor:none;text-decoration:none;transition:background .2s,box-shadow .2s}
+.nav-btn{background:var(--blue);color:#fff;border:none;padding:10px 20px;border-radius:100px;font-size:.85rem;font-weight:500;cursor:pointer;text-decoration:none;transition:background .2s,box-shadow .2s}
 .nav-btn:hover{background:var(--blue-l);box-shadow:0 0 20px var(--blue-glow)}
-.hbg{display:none;flex-direction:column;gap:5px;cursor:none;padding:8px;background:none;border:none}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
 .hbg span{display:block;width:21px;height:1.5px;background:#fff;transition:all .3s}
 .hbg.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .hbg.open span:nth-child(2){opacity:0}
@@ -95,7 +89,7 @@ nav.scrolled{background:rgba(0,0,0,.92)}
 .hero-sub{font-size:clamp(.95rem,1.4vw,1.15rem);color:var(--grey);max-width:480px;line-height:1.75;margin-bottom:44px;opacity:0;animation:fi .8s ease .85s forwards}
 @keyframes fi{to{opacity:1}}
 .hero-ctas{display:flex;gap:14px;align-items:center;flex-wrap:wrap;opacity:0;animation:fi .8s ease 1.05s forwards}
-.btn-p{background:var(--blue);color:#fff;border:none;padding:15px 30px;border-radius:100px;font-size:.95rem;font-weight:500;cursor:none;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:background .2s,box-shadow .2s,transform .15s;position:relative;overflow:hidden}
+.btn-p{background:var(--blue);color:#fff;border:none;padding:15px 30px;border-radius:100px;font-size:.95rem;font-weight:500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:background .2s,box-shadow .2s,transform .15s;position:relative;overflow:hidden}
 .btn-p::after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.13) 50%,transparent 70%);transform:translateX(-100%);transition:transform .5s}
 .btn-p:hover::after{transform:translateX(100%)}
 .btn-p:hover{background:var(--blue-l);box-shadow:0 0 36px var(--blue-glow)}
@@ -241,10 +235,10 @@ nav.scrolled{background:rgba(0,0,0,.92)}
 .f-i,.f-s,.f-ta{background:rgba(255,255,255,.035);border:1px solid var(--border);border-radius:10px;padding:13px 15px;color:#fff;font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;width:100%;transition:border-color .2s,background .2s;-webkit-appearance:none}
 .f-i::placeholder,.f-ta::placeholder{color:rgba(255,255,255,.18)}
 .f-i:focus,.f-s:focus,.f-ta:focus{border-color:var(--blue);background:rgba(20,0,204,.05)}
-.f-s{cursor:none;color:rgba(255,255,255,.5)}
+.f-s{cursor:pointer;color:rgba(255,255,255,.5)}
 .f-s option{background:#111;color:#fff}
 .f-ta{resize:vertical;min-height:100px}
-.f-btn{width:100%;padding:15px;margin-top:20px;background:var(--blue);color:#fff;border:none;border-radius:100px;font-size:.95rem;font-weight:500;cursor:none;font-family:'DM Sans',sans-serif;transition:background .2s,box-shadow .2s}
+.f-btn{width:100%;padding:15px;margin-top:20px;background:var(--blue);color:#fff;border:none;border-radius:100px;font-size:.95rem;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s,box-shadow .2s}
 .f-btn:hover{background:var(--blue-l);box-shadow:0 0 28px var(--blue-glow)}
 .f-btn:disabled{opacity:.5;pointer-events:none}
 #f-status{margin-top:14px;padding:11px 14px;border-radius:10px;font-size:.82rem;text-align:center;display:none}
@@ -266,7 +260,7 @@ footer{border-top:1px solid var(--border);padding:72px 5% 36px}
 .ft-bot{display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:14px}
 .ft-copy{font-size:.75rem;color:rgba(255,255,255,.25)}
 .ft-leg{display:flex;gap:20px}
-.ft-leg a{font-size:.75rem;color:rgba(255,255,255,.25);text-decoration:none;cursor:none;transition:color .2s}
+.ft-leg a{font-size:.75rem;color:rgba(255,255,255,.25);text-decoration:none;cursor:pointer;transition:color .2s}
 .ft-leg a:hover{color:var(--grey)}
 
 /* ─── COOKIE ─────────────────────────────────── */
@@ -275,7 +269,7 @@ footer{border-top:1px solid var(--border);padding:72px 5% 36px}
 .ck-txt{font-size:.82rem;color:var(--grey);max-width:580px;line-height:1.5}
 .ck-txt a{color:var(--blue-xl);text-decoration:none}
 .ck-btns{display:flex;gap:10px;flex-shrink:0}
-.ck-acc,.ck-dec{padding:9px 20px;border-radius:100px;font-size:.82rem;cursor:none;font-family:'DM Sans',sans-serif;border:none;transition:all .2s}
+.ck-acc,.ck-dec{padding:9px 20px;border-radius:100px;font-size:.82rem;cursor:pointer;font-family:'DM Sans',sans-serif;border:none;transition:all .2s}
 .ck-acc{background:var(--blue);color:#fff}.ck-acc:hover{background:var(--blue-l)}
 .ck-dec{background:transparent;color:var(--grey);border:1px solid var(--border)}.ck-dec:hover{border-color:rgba(255,255,255,.2);color:#fff}
 
@@ -284,7 +278,7 @@ footer{border-top:1px solid var(--border);padding:72px 5% 36px}
 .mo.open{opacity:1;pointer-events:all}
 .mo-box{background:#090909;border:1px solid var(--border);border-radius:14px;max-width:760px;width:100%;padding:52px;position:relative;transform:translateY(16px);transition:transform .3s var(--ease)}
 .mo.open .mo-box{transform:translateY(0)}
-.mo-x{position:absolute;top:22px;right:22px;width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--grey);display:flex;align-items:center;justify-content:center;cursor:none;font-size:1rem;transition:border-color .2s,color .2s}
+.mo-x{position:absolute;top:22px;right:22px;width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--grey);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;transition:border-color .2s,color .2s}
 .mo-x:hover{border-color:rgba(255,255,255,.2);color:#fff}
 .mo-box h2{font-family:'Instrument Serif',serif;font-size:1.9rem;margin-bottom:6px;letter-spacing:-.02em}
 .mo-date{font-size:.75rem;color:var(--grey);margin-bottom:36px;font-family:'Space Mono',monospace}
@@ -338,8 +332,6 @@ footer{border-top:1px solid var(--border);padding:72px 5% 36px}
 </head>
 <body>
 
-<div id="cur-dot"></div>
-<div id="cur-ring"></div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -557,16 +549,16 @@ footer{border-top:1px solid var(--border);padding:72px 5% 36px}
     <h2 class="s-h2 rv">Every platform.<br>Every audience.</h2>
   </div>
   <div class="plat-g">
-    <div class="plat rv"><div class="plat-icon">📸</div><div class="plat-name">Instagram</div></div>
-    <div class="plat rv d1"><div class="plat-icon">🎵</div><div class="plat-name">TikTok</div></div>
-    <div class="plat rv d2"><div class="plat-icon">🐦</div><div class="plat-name">Twitter / X</div></div>
-    <div class="plat rv d3"><div class="plat-icon">💼</div><div class="plat-name">LinkedIn</div></div>
-    <div class="plat rv d4"><div class="plat-icon">▶️</div><div class="plat-name">YouTube</div></div>
-    <div class="plat rv"><div class="plat-icon">📘</div><div class="plat-name">Facebook</div></div>
-    <div class="plat rv d1"><div class="plat-icon">📌</div><div class="plat-name">Pinterest</div></div>
-    <div class="plat rv d2"><div class="plat-icon">💬</div><div class="plat-name">Discord</div></div>
-    <div class="plat rv d3"><div class="plat-icon">✈️</div><div class="plat-name">Telegram</div></div>
-    <div class="plat rv d4"><div class="plat-icon">🔍</div><div class="plat-name">Google</div></div>
+    <div class="plat rv"><div class="plat-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div><div class="plat-name">Instagram</div></div>
+    <div class="plat rv d1"><div class="plat-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.19 8.19 0 004.79 1.52V6.82a4.85 4.85 0 01-1.02-.13z"/></svg></div><div class="plat-name">TikTok</div></div>
+    <div class="plat rv d2"><div class="plat-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div><div class="plat-name">Twitter / X</div></div>
+    <div class="plat rv d3"><div class="plat-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div><div class="plat-name">LinkedIn</div></div>
+    <div class="plat rv d4"><div class="plat-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div><div class="plat-name">YouTube</div></div>
+    <div class="plat rv"><div class="plat-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div><div class="plat-name">Facebook</div></div>
+    <div class="plat rv d1"><div class="plat-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641 0 12.017 0z"/></svg></div><div class="plat-name">Pinterest</div></div>
+    <div class="plat rv d2"><div class="plat-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057.101 18.08.114 18.1.136 18.116a19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/></svg></div><div class="plat-name">Discord</div></div>
+    <div class="plat rv d3"><div class="plat-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></div><div class="plat-name">Telegram</div></div>
+    <div class="plat rv d4"><div class="plat-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg></div><div class="plat-name">Google</div></div>
   </div>
 </section>
 
@@ -864,34 +856,6 @@ footer{border-top:1px solid var(--border);padding:72px 5% 36px}
 </div>
 
 <script>
-// ── CURSOR ────────────────────────────────────────────
-(function(){
-  const dot=document.getElementById('cur-dot'),ring=document.getElementById('cur-ring');
-  let mx=0,my=0,rx=0,ry=0,vx=0,vy=0,hov=false;
-  const K=0.11,D=0.77,MR=88;
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY},{passive:true});
-  document.addEventListener('mousedown',()=>document.body.classList.add('c-click'));
-  document.addEventListener('mouseup',()=>document.body.classList.remove('c-click'));
-  const getMag=()=>document.querySelectorAll('.btn-p,.btn-s,.nav-btn,.f-btn,.ck-acc,.ck-dec,.mo-x,.soc,.hbg');
-  function tick(){
-    let tx=mx,ty=my,isMag=false;
-    getMag().forEach(el=>{
-      const r=el.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
-      const dx=mx-cx,dy=my-cy,d=Math.hypot(dx,dy);
-      if(d<MR){const p=1-d/MR;tx=mx-dx*p*.38;ty=my-dy*p*.38;isMag=true}
-    });
-    if(isMag!==hov){hov=isMag;document.body.classList.toggle('c-hover',hov)}
-    vx=(vx+(tx-rx)*K)*D;vy=(vy+(ty-ry)*K)*D;rx+=vx;ry+=vy;
-    dot.style.left=mx+'px';dot.style.top=my+'px';
-    ring.style.left=rx+'px';ring.style.top=ry+'px';
-    requestAnimationFrame(tick);
-  }
-  tick();
-  document.querySelectorAll('a,button,select,input,textarea').forEach(el=>{
-    el.addEventListener('mouseenter',()=>{if(!hov)document.body.classList.add('c-hover')});
-    el.addEventListener('mouseleave',()=>{if(!hov)document.body.classList.remove('c-hover')});
-  });
-})();
 
 // ── NAV ───────────────────────────────────────────────
 window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',scrollY>60)},{passive:true});
