@@ -244,6 +244,17 @@ nav.scrolled{background:rgba(0,0,0,.92)}
 #f-status{margin-top:14px;padding:11px 14px;border-radius:10px;font-size:.82rem;text-align:center;display:none}
 #f-status.ok{background:rgba(0,200,80,.08);border:1px solid rgba(0,200,80,.18);color:#00C864}
 #f-status.err{background:rgba(255,50,50,.08);border:1px solid rgba(255,50,50,.18);color:#FF4444}
+.f-step-label{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-xl);margin-bottom:18px}
+.f-checks{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.f-ck{display:flex;align-items:center;gap:7px;font-size:.82rem;color:var(--grey-l);cursor:pointer;padding:7px 12px;border:1px solid var(--border);border-radius:100px;transition:border-color .2s,color .2s}
+.f-ck:hover{border-color:var(--blue);color:#fff}
+.f-ck input[type=checkbox]{accent-color:var(--blue);width:13px;height:13px;cursor:pointer}
+.f-ck:has(input:checked){border-color:var(--blue);color:#fff;background:rgba(0,87,255,.08)}
+.f-btn-ghost{background:transparent;border:1px solid var(--border);color:var(--grey-l);flex:0 0 auto;width:auto;padding:15px 24px}
+.f-btn-ghost:hover{border-color:rgba(255,255,255,.25);color:#fff;box-shadow:none;background:rgba(255,255,255,.04)}
+.f-row .f-btn{flex:1}
+.f-progress{height:2px;background:rgba(255,255,255,.07);border-radius:2px;margin-top:20px;overflow:hidden}
+.f-progress-bar{height:100%;background:var(--blue);border-radius:2px;transition:width .4s var(--ease)}
 
 /* ─── FOOTER ─────────────────────────────────── */
 footer{border-top:1px solid var(--border);padding:72px 5% 36px}
@@ -811,28 +822,108 @@ footer{border-top:1px solid var(--border);padding:72px 5% 36px}
       <div class="contact-form">
         <div class="contact-scarcity"><div class="scarcity-dot"></div><span><strong>2 of 3 spots filled</strong> this month — 1 remaining</span></div>
         <form id="lead-form">
-          <div class="f-row">
-            <div class="f-g"><label class="f-l" for="fn">First Name</label><input class="f-i" type="text" id="fn" placeholder="Alex" required></div>
-            <div class="f-g"><label class="f-l" for="ln">Last Name</label><input class="f-i" type="text" id="ln" placeholder="Rivera" required></div>
+          <!-- STEP 1 -->
+          <div class="f-step" id="step-1">
+            <div class="f-step-label">Step 1 of 3 — Contact Info</div>
+            <div class="f-row">
+              <div class="f-g"><label class="f-l" for="fn">First Name *</label><input class="f-i" type="text" id="fn" placeholder="Alex" required></div>
+              <div class="f-g"><label class="f-l" for="ln">Last Name *</label><input class="f-i" type="text" id="ln" placeholder="Rivera" required></div>
+            </div>
+            <div class="f-g"><label class="f-l" for="em">Business Email *</label><input class="f-i" type="email" id="em" placeholder="alex@yourcompany.com" required></div>
+            <div class="f-g"><label class="f-l" for="ph">Phone / WhatsApp</label><input class="f-i" type="tel" id="ph" placeholder="+1 (555) 000-0000"></div>
+            <button type="button" class="f-btn" onclick="goStep(2)">Next →</button>
           </div>
-          <div class="f-g"><label class="f-l" for="em">Email</label><input class="f-i" type="email" id="em" placeholder="alex@yourcompany.com" required></div>
-          <div class="f-g"><label class="f-l" for="co">Company / Brand</label><input class="f-i" type="text" id="co" placeholder="Your company name"></div>
-          <div class="f-g">
-            <label class="f-l" for="ty">Business Type</label>
-            <select class="f-s" id="ty">
-              <option value="" disabled selected>Select one</option>
-              <option>Local Business</option>
-              <option>E-commerce Brand</option>
-              <option>SaaS / Tech Startup</option>
-              <option>Content Creator</option>
-              <option>Service Business</option>
-              <option>Web3 / Crypto Project</option>
-              <option>Other</option>
-            </select>
+          <!-- STEP 2 -->
+          <div class="f-step" id="step-2" style="display:none">
+            <div class="f-step-label">Step 2 of 3 — Your Business</div>
+            <div class="f-g"><label class="f-l" for="co">Company / Brand Name *</label><input class="f-i" type="text" id="co" placeholder="Your brand" required></div>
+            <div class="f-g"><label class="f-l" for="ws">Website URL</label><input class="f-i" type="url" id="ws" placeholder="https://yourbrand.com"></div>
+            <div class="f-g">
+              <label class="f-l" for="ty">Business Type *</label>
+              <select class="f-s" id="ty" required>
+                <option value="" disabled selected>Select one</option>
+                <option>E-commerce Brand</option>
+                <option>Local Business</option>
+                <option>SaaS / Tech Startup</option>
+                <option>Service Business / Agency</option>
+                <option>Content Creator / Influencer</option>
+                <option>Web3 / Crypto Project</option>
+                <option>Coaching / Consulting</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="f-g">
+              <label class="f-l" for="rv">Monthly Revenue</label>
+              <select class="f-s" id="rv">
+                <option value="" disabled selected>Select range</option>
+                <option>Pre-revenue</option>
+                <option>$0 – $5K/mo</option>
+                <option>$5K – $20K/mo</option>
+                <option>$20K – $50K/mo</option>
+                <option>$50K – $100K/mo</option>
+                <option>$100K+/mo</option>
+              </select>
+            </div>
+            <div class="f-g">
+              <label class="f-l" for="pl">Platforms You're On</label>
+              <div class="f-checks">
+                <label class="f-ck"><input type="checkbox" name="pl" value="Instagram"> Instagram</label>
+                <label class="f-ck"><input type="checkbox" name="pl" value="TikTok"> TikTok</label>
+                <label class="f-ck"><input type="checkbox" name="pl" value="X/Twitter"> X / Twitter</label>
+                <label class="f-ck"><input type="checkbox" name="pl" value="YouTube"> YouTube</label>
+                <label class="f-ck"><input type="checkbox" name="pl" value="LinkedIn"> LinkedIn</label>
+                <label class="f-ck"><input type="checkbox" name="pl" value="Facebook"> Facebook</label>
+              </div>
+            </div>
+            <div class="f-row">
+              <button type="button" class="f-btn f-btn-ghost" onclick="goStep(1)">← Back</button>
+              <button type="button" class="f-btn" onclick="goStep(3)">Next →</button>
+            </div>
           </div>
-          <div class="f-g"><label class="f-l" for="mg">Tell us about your goals</label><textarea class="f-ta" id="mg" placeholder="What are you trying to achieve? Current challenges? Monthly budget?"></textarea></div>
-          <button type="submit" class="f-btn" id="f-btn">Claim My Free Audit →</button>
-          <div id="f-status"></div>
+          <!-- STEP 3 -->
+          <div class="f-step" id="step-3" style="display:none">
+            <div class="f-step-label">Step 3 of 3 — Goals &amp; Budget</div>
+            <div class="f-g">
+              <label class="f-l" for="sv">Services Needed</label>
+              <div class="f-checks">
+                <label class="f-ck"><input type="checkbox" name="sv" value="Content Creation"> Content Creation</label>
+                <label class="f-ck"><input type="checkbox" name="sv" value="Social Media Management"> Social Media Management</label>
+                <label class="f-ck"><input type="checkbox" name="sv" value="Paid Ads"> Paid Ads (Meta/TikTok/Google)</label>
+                <label class="f-ck"><input type="checkbox" name="sv" value="Brand Strategy"> Brand Strategy</label>
+                <label class="f-ck"><input type="checkbox" name="sv" value="Email & Automation"> Email &amp; Automation</label>
+                <label class="f-ck"><input type="checkbox" name="sv" value="Influencer Ops"> Influencer Ops</label>
+              </div>
+            </div>
+            <div class="f-g">
+              <label class="f-l" for="bd">Monthly Budget for Marketing</label>
+              <select class="f-s" id="bd">
+                <option value="" disabled selected>Select range</option>
+                <option>Under $1,000/mo</option>
+                <option>$1,000 – $3,000/mo</option>
+                <option>$3,000 – $5,000/mo</option>
+                <option>$5,000 – $10,000/mo</option>
+                <option>$10,000+/mo</option>
+              </select>
+            </div>
+            <div class="f-g">
+              <label class="f-l" for="tl">When Do You Want to Start?</label>
+              <select class="f-s" id="tl">
+                <option value="" disabled selected>Select timeline</option>
+                <option>ASAP — ready now</option>
+                <option>Within 30 days</option>
+                <option>1–3 months</option>
+                <option>Just exploring</option>
+              </select>
+            </div>
+            <div class="f-g"><label class="f-l" for="mg">Biggest Marketing Challenge</label><textarea class="f-ta" id="mg" placeholder="What's not working right now? What does winning look like for you?"></textarea></div>
+            <div class="f-row">
+              <button type="button" class="f-btn f-btn-ghost" onclick="goStep(2)">← Back</button>
+              <button type="submit" class="f-btn" id="f-btn">Submit Application →</button>
+            </div>
+            <div id="f-status"></div>
+          </div>
+          <!-- PROGRESS BAR -->
+          <div class="f-progress"><div class="f-progress-bar" id="f-prog" style="width:33%"></div></div>
         </form>
       </div>
     </div>
@@ -1037,6 +1128,13 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelect
 if(!localStorage.getItem('ec_ck')){setTimeout(()=>document.getElementById('ck').classList.add('show'),2200)}
 function dimCk(a){localStorage.setItem('ec_ck',a?'y':'n');document.getElementById('ck').classList.remove('show')}
 
+// ── MULTI-STEP FORM ───────────────────────────────────
+function goStep(n){
+  document.querySelectorAll('.f-step').forEach(s=>s.style.display='none');
+  document.getElementById('step-'+n).style.display='block';
+  document.getElementById('f-prog').style.width=(n/3*100)+'%';
+}
+
 // ── AIRTABLE FORM ─────────────────────────────────────
 const AT_TOKEN='patKRMMRi64Hfr8Zf.a7457a9f625c2a2c17e57724c7190dd77290acb70cf4efb107260e89f8fd1d94';
 const AT_BASE='appaaFMsykiIy7gz5';
@@ -1046,18 +1144,50 @@ const FB_EMAIL='hello@echochain.info';
 document.getElementById('lead-form').addEventListener('submit',async function(e){
   e.preventDefault();
   const btn=document.getElementById('f-btn'),st=document.getElementById('f-status');
-  btn.disabled=true;btn.textContent='Sending...';st.style.display='none';
-  const d={firstName:document.getElementById('fn').value.trim(),lastName:document.getElementById('ln').value.trim(),email:document.getElementById('em').value.trim(),company:document.getElementById('co').value.trim(),type:document.getElementById('ty').value,message:document.getElementById('mg').value.trim(),at:new Date().toISOString()};
+  btn.disabled=true;btn.textContent='Submitting...';st.style.display='none';
+  const platforms=[...document.querySelectorAll('input[name="pl"]:checked')].map(c=>c.value).join(', ');
+  const services=[...document.querySelectorAll('input[name="sv"]:checked')].map(c=>c.value).join(', ');
+  const d={
+    firstName:document.getElementById('fn').value.trim(),
+    lastName:document.getElementById('ln').value.trim(),
+    email:document.getElementById('em').value.trim(),
+    phone:document.getElementById('ph').value.trim(),
+    company:document.getElementById('co').value.trim(),
+    website:document.getElementById('ws').value.trim(),
+    type:document.getElementById('ty').value,
+    revenue:document.getElementById('rv').value,
+    platforms,
+    services,
+    budget:document.getElementById('bd').value,
+    timeline:document.getElementById('tl').value,
+    message:document.getElementById('mg').value.trim(),
+    at:new Date().toISOString()
+  };
   let ok=false;
   if(AT_TOKEN&&AT_BASE){
     try{
-      const r=await fetch(`https://api.airtable.com/v0/${AT_BASE}/${encodeURIComponent(AT_TABLE)}`,{method:'POST',headers:{'Authorization':'Bearer '+AT_TOKEN,'Content-Type':'application/json'},body:JSON.stringify({fields:{'First Name':d.firstName,'Last Name':d.lastName,'Email':d.email,'Company':d.company,'Type':d.type,'Message':d.message,'Date':d.at}})});
+      const r=await fetch(`https://api.airtable.com/v0/${AT_BASE}/${encodeURIComponent(AT_TABLE)}`,{
+        method:'POST',
+        headers:{'Authorization':'Bearer '+AT_TOKEN,'Content-Type':'application/json'},
+        body:JSON.stringify({fields:{
+          'First Name':d.firstName,'Last Name':d.lastName,
+          'Email':d.email,'Phone':d.phone,
+          'Company':d.company,'Website':d.website,
+          'Business Type':d.type,'Monthly Revenue':d.revenue,
+          'Platforms':d.platforms,'Services Needed':d.services,
+          'Monthly Budget':d.budget,'Timeline':d.timeline,
+          'Biggest Challenge':d.message,'Date':d.at
+        }})
+      });
       if(r.ok)ok=true;
     }catch(err){console.warn(err)}
   }
-  if(!ok){const b=`New Lead\n\nName: ${d.firstName} ${d.lastName}\nEmail: ${d.email}\nCompany: ${d.company}\nType: ${d.type}\nMessage: ${d.message}`;window.location.href=`mailto:${FB_EMAIL}?subject=${encodeURIComponent('New Lead: '+d.firstName+' '+d.lastName)}&body=${encodeURIComponent(b)}`}
+  if(!ok){
+    const b=`New Application\n\nName: ${d.firstName} ${d.lastName}\nEmail: ${d.email}\nPhone: ${d.phone}\nCompany: ${d.company}\nWebsite: ${d.website}\nType: ${d.type}\nRevenue: ${d.revenue}\nPlatforms: ${d.platforms}\nServices: ${d.services}\nBudget: ${d.budget}\nTimeline: ${d.timeline}\nChallenge: ${d.message}`;
+    window.location.href=`mailto:${FB_EMAIL}?subject=${encodeURIComponent('New Application: '+d.firstName+' '+d.lastName)}&body=${encodeURIComponent(b)}`;
+  }
   st.className='ok';st.style.display='block';st.textContent='✓ Application received! We\'ll be in touch within 72 hours.';
-  btn.textContent='Submitted ✓';this.reset();btn.disabled=false;
+  btn.textContent='Submitted ✓';this.reset();goStep(1);btn.disabled=false;
 });
 
 // ── SMOOTH SCROLL ─────────────────────────────────────
