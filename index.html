@@ -16,8 +16,8 @@ body{background:#000;color:#fff;font-family:'DM Sans',sans-serif;overflow-x:hidd
 
 /* ─── VARS ───────────────────────────────────── */
 :root{
-  --blue:#1400CC;--blue-l:#3D2FFF;--blue-xl:#6B5EFF;
-  --blue-glow:rgba(20,0,204,.4);--blue-soft:rgba(20,0,204,.12);
+  --blue:#0057FF;--blue-l:#2E7BFF;--blue-xl:#6BA8FF;
+  --blue-glow:rgba(0,87,255,.4);--blue-soft:rgba(0,87,255,.12);
   --grey:#86868B;--grey-l:#D1D1D6;
   --border:rgba(255,255,255,.07);
   --card:#080808;
@@ -65,9 +65,9 @@ nav.scrolled{background:rgba(0,0,0,.92)}
 
 /* Animated orbs */
 .orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px)}
-.orb-1{width:700px;height:700px;background:radial-gradient(circle,rgba(20,0,204,.22) 0%,transparent 70%);top:-15%;right:-10%;animation:orb1 12s ease-in-out infinite}
-.orb-2{width:500px;height:500px;background:radial-gradient(circle,rgba(61,47,255,.14) 0%,transparent 70%);bottom:5%;left:-8%;animation:orb2 15s ease-in-out infinite}
-.orb-3{width:300px;height:300px;background:radial-gradient(circle,rgba(107,94,255,.1) 0%,transparent 70%);top:40%;left:40%;animation:orb3 9s ease-in-out infinite}
+.orb-1{width:700px;height:700px;background:radial-gradient(circle,rgba(0,87,255,.22) 0%,transparent 70%);top:-15%;right:-10%;animation:orb1 12s ease-in-out infinite}
+.orb-2{width:500px;height:500px;background:radial-gradient(circle,rgba(0,87,255,.14) 0%,transparent 70%);bottom:5%;left:-8%;animation:orb2 15s ease-in-out infinite}
+.orb-3{width:300px;height:300px;background:radial-gradient(circle,rgba(107,168,255,.1) 0%,transparent 70%);top:40%;left:40%;animation:orb3 9s ease-in-out infinite}
 @keyframes orb1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-40px,30px) scale(1.08)}}
 @keyframes orb2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-50px) scale(1.06)}}
 @keyframes orb3{0%,100%{transform:translate(0,0)}50%{transform:translate(-20px,20px)}}
@@ -121,7 +121,7 @@ nav.scrolled{background:rgba(0,0,0,.92)}
 .stats{padding:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .stats-g{display:grid;grid-template-columns:repeat(4,1fr);background:var(--border);gap:1px}
 .stat{background:#000;padding:44px 28px;position:relative;overflow:hidden}
-.stat::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 100% 80% at 0 0,rgba(20,0,204,.05),transparent 70%);opacity:0;transition:opacity .4s}
+.stat::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 100% 80% at 0 0,rgba(0,87,255,.05),transparent 70%);opacity:0;transition:opacity .4s}
 .stat:hover::before{opacity:1}
 .stat-n{font-family:'Instrument Serif',serif;font-size:clamp(2.4rem,3.8vw,3.8rem);line-height:1;letter-spacing:-.03em;margin-bottom:6px}
 .stat-l{font-size:.82rem;color:var(--grey)}
@@ -130,11 +130,11 @@ nav.scrolled{background:rgba(0,0,0,.92)}
 .ai-section{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .ai-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .ai-visual{position:relative;aspect-ratio:1;max-width:480px}
-.ai-ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(107,94,255,.15);animation:spin1 20s linear infinite}
-.ai-ring-2{position:absolute;inset:8%;border-radius:50%;border:1px dashed rgba(107,94,255,.1);animation:spin1 14s linear infinite reverse}
-.ai-ring-3{position:absolute;inset:20%;border-radius:50%;border:1px solid rgba(20,0,204,.2);animation:spin1 9s linear infinite}
+.ai-ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(107,168,255,.15);animation:spin1 20s linear infinite}
+.ai-ring-2{position:absolute;inset:8%;border-radius:50%;border:1px dashed rgba(107,168,255,.1);animation:spin1 14s linear infinite reverse}
+.ai-ring-3{position:absolute;inset:20%;border-radius:50%;border:1px solid rgba(0,87,255,.2);animation:spin1 9s linear infinite}
 @keyframes spin1{to{transform:rotate(360deg)}}
-.ai-core{position:absolute;inset:30%;border-radius:50%;background:radial-gradient(circle at 42% 38%,var(--blue-l),var(--blue) 55%,rgba(20,0,204,.3) 80%,transparent);box-shadow:0 0 60px rgba(20,0,204,.5),0 0 120px rgba(20,0,204,.2);animation:pulse-core 4s ease-in-out infinite}
+.ai-core{position:absolute;inset:30%;border-radius:50%;background:radial-gradient(circle at 42% 38%,var(--blue-l),var(--blue) 55%,rgba(0,87,255,.3) 80%,transparent);box-shadow:0 0 60px rgba(0,87,255,.5),0 0 120px rgba(0,87,255,.2);animation:pulse-core 4s ease-in-out infinite}
 @keyframes pulse-core{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 /* Orbiting nodes */
 .ai-node{position:absolute;width:10px;height:10px;background:var(--blue-xl);border-radius:50%;box-shadow:0 0 8px var(--blue-xl)}
@@ -156,8 +156,8 @@ nav.scrolled{background:rgba(0,0,0,.92)}
 .services-hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px;flex-wrap:wrap;gap:20px}
 .svcs-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
 .svc{background:#000;padding:44px 36px;position:relative;overflow:hidden;transition:background .3s}
-.svc:hover{background:rgba(20,0,204,.04)}
-.svc-icon{width:44px;height:44px;border-radius:12px;background:var(--blue-soft);border:1px solid rgba(61,47,255,.2);display:flex;align-items:center;justify-content:center;margin-bottom:24px;font-size:1.2rem}
+.svc:hover{background:rgba(0,87,255,.04)}
+.svc-icon{width:44px;height:44px;border-radius:12px;background:var(--blue-soft);border:1px solid rgba(0,87,255,.2);display:flex;align-items:center;justify-content:center;margin-bottom:24px;font-size:1.2rem}
 .svc-title{font-family:'Instrument Serif',serif;font-size:1.35rem;letter-spacing:-.015em;margin-bottom:10px}
 .svc-desc{font-size:.875rem;color:var(--grey);line-height:1.7;margin-bottom:20px}
 .svc-list{list-style:none;display:flex;flex-direction:column;gap:7px}
@@ -165,7 +165,7 @@ nav.scrolled{background:rgba(0,0,0,.92)}
 .svc-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--blue-xl);flex-shrink:0}
 .svc-list li:hover{color:rgba(255,255,255,.9)}
 .svc-tag{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;padding:4px 10px;border-radius:100px;position:absolute;top:24px;right:24px}
-.tag-ai{background:rgba(107,94,255,.15);color:var(--blue-xl);border:1px solid rgba(107,94,255,.25)}
+.tag-ai{background:rgba(107,168,255,.15);color:var(--blue-xl);border:1px solid rgba(107,168,255,.25)}
 .tag-core{background:rgba(255,255,255,.05);color:rgba(255,255,255,.4);border:1px solid var(--border)}
 
 /* ─── PLATFORMS ──────────────────────────────── */
@@ -175,7 +175,7 @@ nav.scrolled{background:rgba(0,0,0,.92)}
 .plat-hd .s-label::before{display:none}
 .plat-g{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border)}
 .plat{background:#000;padding:28px 20px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;transition:background .3s}
-.plat:hover{background:rgba(20,0,204,.04)}
+.plat:hover{background:rgba(0,87,255,.04)}
 .plat-icon{font-size:1.6rem;filter:grayscale(1);transition:filter .3s}
 .plat:hover .plat-icon{filter:grayscale(0)}
 .plat-name{font-size:.78rem;color:var(--grey);font-weight:500;letter-spacing:.03em}
@@ -215,7 +215,7 @@ nav.scrolled{background:rgba(0,0,0,.92)}
 .testi-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
 .testi-card{background:var(--card);padding:44px 36px;position:relative;overflow:hidden;transition:background .3s}
 .testi-card:hover{background:#0d0d0d}
-.testi-card::before{content:'\201C';position:absolute;top:20px;right:28px;font-family:'Instrument Serif',serif;font-size:6rem;color:rgba(107,94,255,.12);line-height:1;pointer-events:none}
+.testi-card::before{content:'\201C';position:absolute;top:20px;right:28px;font-family:'Instrument Serif',serif;font-size:6rem;color:rgba(107,168,255,.12);line-height:1;pointer-events:none}
 .testi-q{font-size:.95rem;line-height:1.75;color:rgba(255,255,255,.78);margin-bottom:28px;position:relative;z-index:1}
 .testi-sep{width:28px;height:1px;background:var(--blue);margin-bottom:20px}
 .testi-name{font-size:.9rem;font-weight:500;color:#fff;margin-bottom:4px}
@@ -227,14 +227,14 @@ nav.scrolled{background:rgba(0,0,0,.92)}
 .contact-l p{color:var(--grey);line-height:1.75;margin-bottom:28px}
 .inc-list{list-style:none;display:flex;flex-direction:column;gap:10px}
 .inc-list li{font-size:.875rem;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:10px}
-.inc-list li::before{content:'';width:20px;height:20px;border-radius:50%;background:rgba(20,0,204,.18);border:1px solid rgba(61,47,255,.3);background-image:url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l3 3 5-6' stroke='%236B5EFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;flex-shrink:0}
+.inc-list li::before{content:'';width:20px;height:20px;border-radius:50%;background:rgba(0,87,255,.18);border:1px solid rgba(0,87,255,.3);background-image:url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l3 3 5-6' stroke='%236B5EFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;flex-shrink:0}
 .contact-form{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:36px}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .f-g{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
 .f-l{font-size:.78rem;color:var(--grey);font-weight:500;letter-spacing:.03em}
 .f-i,.f-s,.f-ta{background:rgba(255,255,255,.035);border:1px solid var(--border);border-radius:10px;padding:13px 15px;color:#fff;font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;width:100%;transition:border-color .2s,background .2s;-webkit-appearance:none}
 .f-i::placeholder,.f-ta::placeholder{color:rgba(255,255,255,.18)}
-.f-i:focus,.f-s:focus,.f-ta:focus{border-color:var(--blue);background:rgba(20,0,204,.05)}
+.f-i:focus,.f-s:focus,.f-ta:focus{border-color:var(--blue);background:rgba(0,87,255,.05)}
 .f-s{cursor:pointer;color:rgba(255,255,255,.5)}
 .f-s option{background:#111;color:#fff}
 .f-ta{resize:vertical;min-height:100px}
@@ -252,7 +252,7 @@ footer{border-top:1px solid var(--border);padding:72px 5% 36px}
 .ft-tag{color:var(--grey);font-size:.875rem;line-height:1.6;max-width:220px;margin-bottom:22px}
 .ft-social{display:flex;gap:10px}
 .soc{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--grey);text-decoration:none;transition:border-color .2s,color .2s,background .2s}
-.soc:hover{border-color:var(--blue);color:var(--blue-xl);background:rgba(20,0,204,.08)}
+.soc:hover{border-color:var(--blue);color:var(--blue-xl);background:rgba(0,87,255,.08)}
 .ft-col-t{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:18px}
 .ft-links{list-style:none;display:flex;flex-direction:column;gap:9px}
 .ft-links a{color:var(--grey);font-size:.875rem;text-decoration:none;transition:color .2s}
@@ -294,8 +294,61 @@ footer{border-top:1px solid var(--border);padding:72px 5% 36px}
 .rv.on{opacity:1;transform:translateY(0)}
 .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
 
+/* ─── SCARCITY BADGE ─────────────────────────── */
+.scarcity{display:inline-flex;align-items:center;gap:8px;background:rgba(0,87,255,.12);border:1px solid rgba(0,87,255,.3);border-radius:100px;padding:7px 16px;font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-xl);margin-bottom:20px}
+.scarcity-dot{width:6px;height:6px;background:#00C864;border-radius:50%;box-shadow:0 0 6px #00C864;animation:sdot 1.5s ease-in-out infinite}
+@keyframes sdot{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ─── PAIN SECTION ───────────────────────────── */
+.pain-sec{border-top:1px solid var(--border)}
+.pain-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:56px}
+.pain-card{background:#000;padding:44px 36px;position:relative;overflow:hidden;transition:background .3s}
+.pain-card:hover{background:rgba(0,87,255,.03)}
+.pain-n{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:rgba(255,0,0,.4);margin-bottom:20px}
+.pain-card h4{font-family:'Instrument Serif',serif;font-size:1.2rem;letter-spacing:-.015em;margin-bottom:12px;color:#fff}
+.pain-card p{font-size:.875rem;color:var(--grey);line-height:1.75}
+
+/* ─── VALUE STACK ────────────────────────────── */
+.value-sec{background:var(--card);border-top:1px solid var(--border)}
+.vstack-g{margin-top:44px;display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.vstack-item{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;border-bottom:1px solid var(--border);transition:background .2s}
+.vstack-item:hover{background:rgba(0,87,255,.04)}
+.vstack-item:last-child{border-bottom:none}
+.vs-left{display:flex;align-items:center;gap:12px;font-size:.9rem;color:rgba(255,255,255,.75)}
+.vs-check{color:var(--blue-xl);font-size:.9rem}
+.vs-val{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--grey);letter-spacing:.05em}
+.vstack-total{background:rgba(0,87,255,.06)!important;border-top:1px solid rgba(0,87,255,.2)!important}
+.vstack-total .vs-left{font-weight:600;color:#fff;font-size:1rem}
+.vs-total-val{color:var(--blue-xl)!important;font-size:.85rem!important}
+.vstack-cta{margin-top:44px;display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.vstack-offer{font-size:1rem;color:rgba(255,255,255,.6);font-style:italic}
+
+/* ─── GUARANTEE ──────────────────────────────── */
+.guarantee-sec{border-top:1px solid var(--border);background:#000}
+.guar-inner{max-width:760px;margin:0 auto;text-align:center;padding:0 20px}
+.guar-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,200,100,.07);border:1px solid rgba(0,200,100,.2);border-radius:100px;padding:8px 20px;font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:#00C864;margin-bottom:28px}
+.guar-inner .s-h2{margin-bottom:20px}
+.guar-inner p{font-size:.975rem;color:var(--grey);line-height:1.8;max-width:580px;margin:0 auto 36px}
+
+/* ─── FAQ ────────────────────────────────────── */
+.faq-sec{border-top:1px solid var(--border)}
+.faq-g{max-width:760px;margin:56px auto 0;display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid var(--border);overflow:hidden}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:24px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:#fff;font-family:'DM Sans',sans-serif;font-size:.975rem;font-weight:500;gap:20px;transition:color .2s}
+.faq-q:hover{color:var(--blue-xl)}
+.faq-arrow{width:20px;height:20px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s,border-color .3s}
+.faq-item.open .faq-arrow{transform:rotate(45deg);border-color:var(--blue)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{padding:0 0 22px;color:var(--grey);font-size:.9rem;line-height:1.8}
+
+/* ─── CONTACT SCARCITY ───────────────────────── */
+.contact-scarcity{background:rgba(0,87,255,.06);border:1px solid rgba(0,87,255,.2);border-radius:10px;padding:14px 18px;margin-bottom:24px;display:flex;align-items:center;gap:10px;font-size:.82rem;color:rgba(255,255,255,.7)}
+.contact-scarcity strong{color:#fff}
+
 /* ─── RESPONSIVE ─────────────────────────────── */
 @media(max-width:1080px){
+  .pain-g{grid-template-columns:1fr}
   .stats-g{grid-template-columns:repeat(2,1fr)}
   .svcs-g{grid-template-columns:1fr 1fr}
   .plat-g{grid-template-columns:repeat(3,1fr)}
@@ -358,17 +411,19 @@ footer{border-top:1px solid var(--border);padding:72px 5% 36px}
   <div class="orb orb-3"></div>
   <div class="hero-grid"></div>
   <div class="hero-inner">
+    <div class="scarcity" style="opacity:0;animation:fi .8s ease .1s forwards"><div class="scarcity-dot"></div>Only 3 client spots open this month</div>
     <div class="h-eyebrow">AI-Powered Social Media Agency</div>
     <h1 class="hero-h1">
-      <span class="line"><span class="li l1">Your brand.</span></span>
-      <span class="line"><span class="li l2"><em>Everywhere.</em></span></span>
-      <span class="line"><span class="li l3">Unavoidable.</span></span>
+      <span class="line"><span class="li l1">Grow to 10K–100K</span></span>
+      <span class="line"><span class="li l2">followers in <em>90 days.</em></span></span>
+      <span class="line"><span class="li l3">Guaranteed.</span></span>
     </h1>
-    <p class="hero-sub">Echo Chain is the agency that weaponizes social media, AI, and cutting-edge strategy to make your brand impossible to ignore — in any market, on any platform.</p>
+    <p class="hero-sub">Echo Chain is the AI-powered SMMA that delivers specific, measurable growth — or we keep working until we do. No retainer traps. No vanity metrics. Just compounding results.</p>
     <div class="hero-ctas">
-      <a href="#contact" class="btn-p">Start Your Growth <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5h10M9 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="#services" class="btn-s">See our work <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7 3l3.5 3.5L7 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#contact" class="btn-p">Claim Your Free Audit <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5h10M9 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#results" class="btn-s">See client results <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7 3l3.5 3.5L7 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
+    <p style="font-size:.75rem;color:rgba(255,255,255,.28);margin-top:16px;font-family:'Space Mono',monospace;letter-spacing:.06em">Free audit · No commitment · 72hr response</p>
   </div>
   <div class="scroll-ind"><div class="scroll-line"></div><span class="scroll-txt">Scroll</span></div>
 </section>
@@ -414,6 +469,29 @@ footer{border-top:1px solid var(--border);padding:72px 5% 36px}
     </div>
   </div>
 </div>
+
+<!-- PAIN SECTION -->
+<section class="s pain-sec">
+  <div class="s-label rv">Why You're Here</div>
+  <h2 class="s-h2 rv">Most brands stay invisible.<br>Here's the real reason.</h2>
+  <div class="pain-g">
+    <div class="pain-card rv">
+      <div class="pain-n">PROBLEM 01</div>
+      <h4>Agencies that overpromise</h4>
+      <p>You've signed retainers, paid monthly fees, and watched "experts" post recycled content with zero strategy. Month 3 looks identical to month 1. You're paying for effort, not results.</p>
+    </div>
+    <div class="pain-card rv d1">
+      <div class="pain-n">PROBLEM 02</div>
+      <h4>Ad spend with no system</h4>
+      <p>$2,000 into Meta. $3,000 into Google. Screenshots of reach with no revenue attached. No funnel. No tracking. No accountability. Just burn rate dressed up as marketing.</p>
+    </div>
+    <div class="pain-card rv d2">
+      <div class="pain-n">PROBLEM 03</div>
+      <h4>Slow teams, no AI leverage</h4>
+      <p>A content team that takes 3 days to post one reel. A freelancer who delivers "next week." Competitors publishing daily AI-assisted content while you're waiting on revisions.</p>
+    </div>
+  </div>
+</section>
 
 <!-- STATS -->
 <div class="stats">
@@ -542,6 +620,27 @@ footer{border-top:1px solid var(--border);padding:72px 5% 36px}
   </div>
 </section>
 
+<!-- VALUE STACK -->
+<section class="s value-sec">
+  <div class="s-label rv">The Full Stack</div>
+  <h2 class="s-h2 rv">Everything included.<br>Nothing hidden.</h2>
+  <p class="s-sub rv">Most agencies charge separately for each piece. We stack it all in one flat retainer — and guarantee the output.</p>
+  <div class="vstack-g rv">
+    <div class="vstack-item"><div class="vs-left"><span class="vs-check">✓</span><span>AI Content Engine — 30 posts/mo across all platforms</span></div><div class="vs-val">$3,500 value</div></div>
+    <div class="vstack-item"><div class="vs-left"><span class="vs-check">✓</span><span>Short-Form Video Production — 8 reels/TikToks/Shorts per mo</span></div><div class="vs-val">$4,000 value</div></div>
+    <div class="vstack-item"><div class="vs-left"><span class="vs-check">✓</span><span>Paid Ads Management — Meta, TikTok, Google campaigns</span></div><div class="vs-val">$2,500 value</div></div>
+    <div class="vstack-item"><div class="vs-left"><span class="vs-check">✓</span><span>Daily Community Management — DMs, comments, engagement</span></div><div class="vs-val">$1,800 value</div></div>
+    <div class="vstack-item"><div class="vs-left"><span class="vs-check">✓</span><span>Email &amp; Automation Flows — welcome, nurture, re-engage</span></div><div class="vs-val">$2,000 value</div></div>
+    <div class="vstack-item"><div class="vs-left"><span class="vs-check">✓</span><span>Monthly Strategy &amp; Analytics — competitor intel + growth roadmap</span></div><div class="vs-val">$1,500 value</div></div>
+    <div class="vstack-item"><div class="vs-left"><span class="vs-check">✓</span><span>Dedicated Account Manager — your single point of contact</span></div><div class="vs-val">$2,000 value</div></div>
+    <div class="vstack-item vstack-total"><div class="vs-left"><span>Total Stack Value</span></div><div class="vs-val vs-total-val">$17,300/mo</div></div>
+  </div>
+  <div class="vstack-cta rv">
+    <p class="vstack-offer">You pay a fraction of this. Limited client spots available.</p>
+    <a href="#contact" class="btn-p">See If You Qualify <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5h10M9 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+</section>
+
 <!-- PLATFORMS -->
 <section class="s platforms" id="platforms">
   <div class="plat-hd">
@@ -654,24 +753,63 @@ footer{border-top:1px solid var(--border);padding:72px 5% 36px}
   </div>
 </section>
 
+<!-- GUARANTEE -->
+<section class="s guarantee-sec">
+  <div class="guar-inner">
+    <div class="guar-badge rv">✦ The Echo Chain Guarantee</div>
+    <h2 class="s-h2 rv">If we don't hit your growth target in 60 days,<br>we work free until we do.</h2>
+    <p class="rv">We agree on a specific metric at the start — followers, leads, ROAS, whatever matters to your business. If we miss it in 60 days, we extend your engagement at zero cost until the target is hit. No exceptions. No fine print. We put skin in the game so you don't have to.</p>
+    <a href="#contact" class="btn-p rv">Start With Zero Risk <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5h10M9 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="s faq-sec">
+  <div class="s-label rv" style="justify-content:center;margin-bottom:8px">Before You Apply</div>
+  <h2 class="s-h2 rv" style="text-align:center;margin-bottom:0">The questions everyone asks.</h2>
+  <div class="faq-g">
+    <div class="faq-item rv">
+      <button class="faq-q">How fast will I actually see results?<span class="faq-arrow"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span></button>
+      <div class="faq-a"><p>Most clients see measurable engagement growth in the first 2 weeks. Follower growth and lead volume typically compound through weeks 3–8. We track weekly and share a live dashboard so you're never in the dark. The 60-day guarantee is our floor, not our ceiling.</p></div>
+    </div>
+    <div class="faq-item rv">
+      <button class="faq-q">What's the minimum commitment?<span class="faq-arrow"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span></button>
+      <div class="faq-a"><p>We recommend a minimum of 3 months for compounding results — social media is a long game and we're honest about that. But we don't lock you into 12-month contracts. If after 90 days you're not happy with results, you can leave. We earn your renewal.</p></div>
+    </div>
+    <div class="faq-item rv">
+      <button class="faq-q">Do you work with my industry?<span class="faq-arrow"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span></button>
+      <div class="faq-a"><p>We've worked with e-commerce, SaaS, local businesses, content creators, Web3 projects, service businesses, and personal brands. The AI tools and strategy frameworks work across verticals. If we don't think we're the right fit, we'll tell you in the audit call — we only take on clients we're confident we can grow.</p></div>
+    </div>
+    <div class="faq-item rv">
+      <button class="faq-q">What makes Echo Chain different from other agencies?<span class="faq-arrow"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span></button>
+      <div class="faq-a"><p>Three things: speed (we publish faster using AI than most agencies brief), specificity (we agree on exact targets and hold ourselves to them), and skin in the game (the guarantee means we only win if you win). Most agencies are paid to try. We're paid to deliver.</p></div>
+    </div>
+    <div class="faq-item rv">
+      <button class="faq-q">How much does it cost?<span class="faq-arrow"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span></button>
+      <div class="faq-a"><p>Pricing depends on the scope — platforms, ad budget, content volume, and growth targets. We don't list a price publicly because we only work with brands we can genuinely move the needle for, and we price accordingly. Apply below and we'll give you a custom proposal within 72 hours. No sales pressure, just a number and a plan.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="s contact" id="contact">
   <div class="contact-inner">
     <div class="contact-l">
-      <div class="s-label rv">Apply to Work With Us</div>
-      <h2 class="s-h2 rv">Ready to be<br>unavoidable?</h2>
-      <p class="rv">We're selective about who we work with. Tell us about your brand — if it's a fit, we'll come back with a custom growth plan within 72 hours.</p>
+      <div class="s-label rv">Apply Now — Limited Spots</div>
+      <h2 class="s-h2 rv">We take 3 new clients<br>per month. That's it.</h2>
+      <p class="rv">We stay small so we stay good. Every client gets a dedicated account manager and real attention — not a template and a Loom video. If you're serious about growth, fill this out. We'll come back with a custom plan and a clear number within 72 hours.</p>
       <ul class="inc-list rv">
-        <li>Free brand audit included</li>
-        <li>Custom 90-day strategy roadmap</li>
+        <li>Free brand audit (normally $500)</li>
+        <li>Custom 90-day growth roadmap</li>
         <li>Dedicated account manager</li>
         <li>Real-time performance dashboard</li>
-        <li>No long-term contracts to start</li>
-        <li>72-hour response guarantee</li>
+        <li>60-day growth guarantee</li>
+        <li>Month-to-month after 90 days</li>
       </ul>
     </div>
     <div class="rv d1">
       <div class="contact-form">
+        <div class="contact-scarcity"><div class="scarcity-dot"></div><span><strong>2 of 3 spots filled</strong> this month — 1 remaining</span></div>
         <form id="lead-form">
           <div class="f-row">
             <div class="f-g"><label class="f-l" for="fn">First Name</label><input class="f-i" type="text" id="fn" placeholder="Alex" required></div>
@@ -693,7 +831,7 @@ footer{border-top:1px solid var(--border);padding:72px 5% 36px}
             </select>
           </div>
           <div class="f-g"><label class="f-l" for="mg">Tell us about your goals</label><textarea class="f-ta" id="mg" placeholder="What are you trying to achieve? Current challenges? Monthly budget?"></textarea></div>
-          <button type="submit" class="f-btn" id="f-btn">Submit Application →</button>
+          <button type="submit" class="f-btn" id="f-btn">Claim My Free Audit →</button>
           <div id="f-status"></div>
         </form>
       </div>
@@ -878,6 +1016,16 @@ const co=new IntersectionObserver(es=>{es.forEach(e=>{
   co.unobserve(el);
 })},{threshold:.5});
 document.querySelectorAll('.ctr').forEach(el=>co.observe(el));
+
+// ── FAQ ACCORDION ─────────────────────────────────────
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.closest('.faq-item');
+    const wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen)item.classList.add('open');
+  });
+});
 
 // ── MODALS ────────────────────────────────────────────
 function openM(id){const o=document.getElementById('mo-'+id);if(o){o.classList.add('open');document.body.style.overflow='hidden'}}
