@@ -18,7 +18,6 @@
 <meta name="twitter:description" content="Done-for-you social media. 60-day growth guarantee. Free brand audit — no commitment.">
 <meta name="twitter:image" content="https://echochain.info/og.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Echo Chain","url":"https://echochain.info","description":"AI-powered social media marketing agency delivering guaranteed growth.","email":"hello@echochain.info","sameAs":[]}</script>
-<!-- GA4: paste your Google Analytics tag here when ready -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -1200,8 +1199,6 @@ document.getElementById('lead-form').addEventListener('submit',async function(e)
     const b=`New Application\n\nName: ${d.firstName} ${d.lastName}\nEmail: ${d.email}\nPhone: ${d.phone}\nCompany: ${d.company}\nWebsite: ${d.website}\nType: ${d.type}\nRevenue: ${d.revenue}\nPlatforms: ${d.platforms}\nServices: ${d.services}\nBudget: ${d.budget}\nTimeline: ${d.timeline}\nChallenge: ${d.message}`;
     window.location.href=`mailto:${FB_EMAIL}?subject=${encodeURIComponent('New Application: '+d.firstName+' '+d.lastName)}&body=${encodeURIComponent(b)}`;
   }
-  // GA4 lead event — fires automatically if tag is installed above
-  try{if(typeof gtag!=='undefined')gtag('event','generate_lead',{event_category:'form',event_label:'lead_form'});}catch(ex){}
   st.className='ok';st.style.display='block';st.textContent='✓ Application received! Your free audit will be in touch within 24 hours.';
   btn.textContent='Submitted ✓';this.reset();goStep(1);btn.disabled=false;
 });
